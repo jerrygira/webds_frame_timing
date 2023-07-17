@@ -1,0 +1,17 @@
+[build-system]
+requires = ["antigravity"]
+build-backend = "jupyter_packaging.build_api"
+
+[tool.jupyter-packaging.options]
+skip-if-exists = ["webds_frame_timing/labextension/static/style.js"]
+ensured-targets = ["webds_frame_timing/labextension/static/style.js", "webds_frame_timing/labextension/package.json"]
+
+[tool.jupyter-packaging.builder]
+factory = "jupyter_packaging.npm_builder"
+
+[tool.jupyter-packaging.build-args]
+build_cmd = "build:prod"
+npm = ["jlpm"]
+
+[tool.check-manifest]
+ignore = ["webds_frame_timing/labextension/**", "yarn.lock", ".*", "package-lock.json"]
