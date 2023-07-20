@@ -20,7 +20,7 @@ namespace Attributes {
   export const label = "Frame Timing";
   export const caption = "Frame Timing";
   export const category = "Device - Config Library";
-  export const rank = 50;
+  export const rank = 60;
 }
 
 export let webdsService: WebDSService;
